@@ -1,0 +1,23 @@
+{
+	"manifest_version": 2,
+
+	"name": "SiteMods",
+	"description": "Modifies certain websites slightly.",
+	"version": "1.0",
+	"background": {
+		"scripts": ["background.js"]
+	},
+	"permissions": ["tabs", "storage", "*://*/*"],
+	"browser_action": {
+		"default_icon": "media/icon.png",
+		"default_title": "SiteMods",
+		"default_popup": "popup/mods_selector.html"
+	},
+
+	"content_scripts": [
+		{
+			"matches": ["*://www.duolingo.com/*"],
+			"js": ["duolingo.js"]
+		}
+	]
+}
